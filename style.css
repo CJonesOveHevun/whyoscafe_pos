@@ -354,3 +354,42 @@ ul.card li {
     margin-top: 0.3rem;
 }
 
+/* LOCAL EVENTS PAGE */
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.event-card {
+    flex: 1;
+    min-width: 280px;
+    background-color: #fefcfb;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #d97706;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+}
+
+.event-card h3 {
+    margin-top: 0;
+    color: #92400e;
+}
+
+.event-date {
+    font-size: 0.9rem;
+    color: #b45309;
+    margin-bottom: 0.5rem;
+}
+
+.event-description {
+    font-size: 0.95rem;
+    color: #555;
+}
+
