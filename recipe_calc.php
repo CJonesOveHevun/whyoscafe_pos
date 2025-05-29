@@ -1,6 +1,6 @@
 <?php
 $recipes = [
-    "iced_caramerl_latte" => [
+    "iced_caramel_latte" => [
         "Arabica Coffee Beans" => ["amount" => 10, "unit" => "g"],
         "Caramel Syrup" => ["amount" => 30, "unit" => "ml"],
         "Oat Milk" => ["amount" =>150, "unit" => "ml"],
@@ -8,14 +8,13 @@ $recipes = [
     ]
     ];
 
-    $selected_recipe = $_POST['recipe'] ?? '';
-    $servings = intval($_POST['servings'] ?? 1);
-    if (isset($recipes[$selected_recipe])) {
-        echo "<ul>";
-
-        foreach ($recipes[$selected_recipe] as $ingredient => $info) {
-            $total = $info['amount'] * $servings;
-            echo "<li>$ingredient: <strong>$total {$info['unit']}</strong></li>";
+$selected_recipe = $_POST['recipe'] ?? '';
+$servings = intval($_POST['servings'] ?? 1);
+if (isset($recipes[$selected_recipe])) {
+    echo "<ul>";
+    foreach ($recipes[$selected_recipe] as $ingredient => $info) {
+        $total = $info['amount'] * $servings;
+        echo "<li>$ingredient: <strong>$total {$info['unit']}</strong></li>";
     }
     echo '</ul>';
 } else {

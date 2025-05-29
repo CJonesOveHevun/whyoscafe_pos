@@ -19,11 +19,11 @@
             </form>
             <script>
                 document.getElementById("recipeForm").addEventListener("submit", function(e) {
-                    e.preventDefault();
+                e.preventDefault();
                 let recipe = document.getElementById("recipe").value;
                 let servings = document.getElementById("servings").value;
                 
-                fetch("calculate.php", {
+                fetch("recipe_calc.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
