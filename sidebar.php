@@ -5,7 +5,7 @@
         <a href="dashboard.php">Dashboard</a>
         <a href="#">Inventory</a>
         <a href="calculator.php">Ingredients Calculator</a>
-        <a href="#">Local Events</a>
+        <a href="local_events.php">Local Events</a>
     </nav>
     <div class="footer">
         <p><strong>Store Manager</strong><br><span>Admin</span></p>
