@@ -131,3 +131,137 @@ main h1 {
     margin-top: 0.3rem;
     color: #a35c1d;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f9f7f4;
+    color: #3a2e2e;
+    margin: 0px;
+}
+
+main {
+    width: 100%;
+    padding: 2rem;
+}
+
+.sidebar {
+    background-color: #3a1e1e;
+    color: #fff;
+    padding: 2rem;
+    width: 250px;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.sidebar .tagline {
+    font-size: 0.9rem;
+    color: #f3cba5;
+    margin-bottom: 2rem;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 0.8rem 0;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    background-color: #f7941d;
+    border-radius: 10px;
+    color: #3a1e1e;
+    padding-left: 10px;
+}
+
+.sidebar .footer {
+    margin-top: auto;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding: 0rem;
+}
+
+main h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.subtitle {
+    color: #f7941d;
+    margin-bottom: 1.5rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    grid-template-areas:
+        "calc results"
+        "inventory converter";
+}
+
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+}
+
+.card label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.card input, .card select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.btn-primary {
+    margin-top: 1rem;
+    background-color: #f7941d;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #e17c00;
+}
+
+.conversions p {
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    color: #a35c1d;
+}

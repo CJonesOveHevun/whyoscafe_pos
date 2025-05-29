@@ -4,23 +4,19 @@
     <main>
         <h1>Ingredients Calculator</h1>
         <p class="subtitle">Calculate precise ingredient measurements for your beverages</p>
-
         <div class="content-grid">
-            <!-- Recipe Calculator -->
             <section class="card">
                 <h2>Recipe Calculator</h2>
-                <label>Select Recipe</label>
-                <select>
-                    <option>Iced Caramel Latte</option>
+                <label for="recipe">Select Recipe</label>
+                <select id="recipe" name="recipe">
+                    <option value="iced_caramel_latte">Iced Caramel Latte</option>
                 </select>
 
                 <label>Number of Servings</label>
-                <input type="number" min="1" value="1" />
+                <input type="number" id="servings" name="servings" min="1" value="1" />
+                <button class="btn-primary" type="submit">Calculate Recipe</button>
 
-                <button class="btn-primary">Calculate Recipe</button>
             </section>
-
-            <!-- Calculation Results -->
             <section class="card results">
                 <h2>Calculation Results</h2>
                 <p>Select a recipe and calculate to see results</p>
