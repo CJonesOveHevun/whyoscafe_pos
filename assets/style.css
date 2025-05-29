@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
 }
@@ -9,6 +9,12 @@ body {
     display: flex;
     background-color: #f9f7f4;
     color: #3a2e2e;
+    margin: 0px;
+}
+
+main {
+    width: 100%;
+    padding: 2rem;
 }
 
 .sidebar {
@@ -42,6 +48,7 @@ body {
 .sidebar nav a.active,
 .sidebar nav a:hover {
     background-color: #f7941d;
+    border-radius: 10px;
     color: #3a1e1e;
     padding-left: 10px;
 }
@@ -53,8 +60,10 @@ body {
 }
 
 .container {
+    display: flex;
+    justify-content: space-between;
     flex: 1;
-    padding: 2rem;
+    padding: 0rem;
 }
 
 main h1 {

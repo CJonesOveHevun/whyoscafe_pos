@@ -1,6 +1,6 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'header.php'; ?>
 <div class="container">
-    <?php include 'includes/sidebar.php'; ?>
+    <?php include 'sidebar.php'; ?>
     <main>
         <h1>Ingredients Calculator</h1>
         <p class="subtitle">Calculate precise ingredient measurements for your beverages</p>
