@@ -2,9 +2,9 @@
     <h2>Whyos Cafe</h2>
     <p class="tagline">Inventory System</p>
     <nav>
-        <a href="pages/dashboard.php">Dashboard</a>
+        <a href="dashboard.php">Dashboard</a>
         <a href="#">Inventory</a>
-        <a href="#">Ingredients Calculator</a>
+        <a href="calculator.php">Ingredients Calculator</a>
         <a href="#">Local Events</a>
     </nav>
     <div class="footer">
