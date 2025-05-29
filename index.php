@@ -48,7 +48,7 @@
             <!-- Ingredient Inventory -->
             <section class="card inventory">
                 <h2>Ingredient Inventory</h2>
-                <ul>
+                <ul class="ul-form">
                     <li><strong>Arabica Coffee Beans</strong> — 15.500 kg</li>
                     <li><strong>Caramel Syrup</strong> — 2.100 L</li>
                     <li><strong>Croissants</strong> — 50,000 pieces</li>

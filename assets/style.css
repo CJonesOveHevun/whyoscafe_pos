@@ -21,7 +21,7 @@ main {
     background-color: #1f49a1;
     color: #fff;
     padding: 2rem;
-    width: 250px;
+    width: 290px;
     height: 100vh;
 }
 
@@ -36,9 +36,12 @@ main {
     margin-bottom: 2rem;
 }
 
+
 .sidebar nav a {
+    gap: 3px;
+    margin: 4px 0px;
     display: block;
-    padding: 0.8rem 0;
+    padding: 0.8rem 0.2rem;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -131,6 +134,11 @@ main h1 {
     margin-top: 0.3rem;
     color: #a35c1d;
 }
+
+.ul-form{
+    list-style: none;
+}
+
 ul.card li {
     padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
