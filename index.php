@@ -5,18 +5,18 @@
         <h1>Ingredients Calculator</h1>
         <p class="subtitle">Calculate precise ingredient measurements for your beverages</p>
         <div class="content-grid">
-            <section class="card">
+            <form method="POST" action="recipe_calc.php" class="card">
                 <h2>Recipe Calculator</h2>
                 <label for="recipe">Select Recipe</label>
                 <select id="recipe" name="recipe">
                     <option value="iced_caramel_latte">Iced Caramel Latte</option>
                 </select>
 
-                <label>Number of Servings</label>
+                <label for="servings">Number of Servings</label>
                 <input type="number" id="servings" name="servings" min="1" value="1" />
                 <button class="btn-primary" type="submit">Calculate Recipe</button>
 
-            </section>
+            </form>
             <section class="card results">
                 <h2>Calculation Results</h2>
                 <p>Select a recipe and calculate to see results</p>
