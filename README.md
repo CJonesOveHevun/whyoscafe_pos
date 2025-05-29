@@ -1,2 +1,2 @@
-# whyoscafe_pos
-Mock PoS website for my school project
+## whyoscafe_pos
+Mock PoS website for school project
