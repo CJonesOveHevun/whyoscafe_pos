@@ -5,7 +5,7 @@
         <h1>Ingredients Calculator</h1>
         <p class="subtitle">Calculate precise ingredient measurements for your beverages</p>
         <div class="content-grid">
-            <form method="POST" action="recipe_calc.php" class="card">
+            <form id="recipeForm" class="card">
                 <h2>Recipe Calculator</h2>
                 <label for="recipe">Select Recipe</label>
                 <select id="recipe" name="recipe">
@@ -17,10 +17,33 @@
                 <button class="btn-primary" type="submit">Calculate Recipe</button>
 
             </form>
-            <section class="card results">
+            <script>
+                document.getElementById("recipeForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                let recipe = document.getElementById("recipe").value;
+                let servings = document.getElementById("servings").value;
+                
+                fetch("calculate.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: `recipe=${encodeURIComponent(recipe)}&servings=${encodeURIComponent(servings)}`
+                }).then(Response => Response.text())
+                .then(data => {
+                    document.getElementById("results").innerHTML = data;
+                }).catch(err =>{
+                    document.getElementById("results").innerHTML = "An error has occured";
+                    console.error("error: ", error);
+                })
+            
+            });
+            </script>
+
+            <div class="card" id="resultContainer" style="margin-top:1rem;">
                 <h2>Calculation Results</h2>
-                <p>Select a recipe and calculate to see results</p>
-            </section>
+                <div id="results">Select a recipe and calculate to see results</div>
+            </div>
 
             <!-- Ingredient Inventory -->
             <section class="card inventory">
