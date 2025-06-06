@@ -61,7 +61,10 @@
                     
                     <td>
                         <button>Edit</button>
-                        <button>Delete</button>
+                        <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this item?')">
+                        <input type="hidden" name="id" value="<?=$item["_id"]?>">
+                        <button type="submit">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -102,7 +105,8 @@
                         <option value="pieces">Pieces</option>
                     </select>
                     </div>
-                    
+                    <label>Price:</label>
+                    <input type="number" name="price" step="0.01" min="0" required>
 
                     <label>Expiry Date:</label>
                     <input type="date" name="expiry_date">

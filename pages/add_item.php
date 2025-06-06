@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'category'=>$_POST['category'],
         'stock'=>(int)$_POST['stock'],
         'unit'=>$_POST['unit'],
+        'price'=>(int)$_POST['price'],
         'expiry_date'=> $_POST['expiry_date']
         ]);
 
