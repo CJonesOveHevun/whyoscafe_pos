@@ -1,5 +1,5 @@
 <aside class="sidebar">
-    <h2>Whyos Cafe</h2>
+    <h2><div class="sidebar-icon"></div>Whyos Cafe</h2>
     <p class="tagline">Inventory System</p>
     <nav>
         <a href="dashboard.php">Dashboard</a>

@@ -62,6 +62,12 @@ main {
     margin-top: 2rem;
 }
 
+.sidebar-icon {
+    background-image: url("../assets/cafe_icon.jpg");
+    height: 100px;
+    width: 100px;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -352,5 +358,9 @@ ul.card li {
     font-size: 0.85rem;
     color: #b45309;
     margin-top: 0.3rem;
+}
+
+.events-container {
+    background-color: white;
 }
 
