@@ -3,6 +3,11 @@
     <?php include '../sidebar.php'; ?>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/inventory.css">
+    <?php
+    require_once '../backend/db_connect.php';
+    $collections = $client->selectCollection($dbname,'inventory');
+    $items = $collections->find();
+    ?>
     <main>
         <div class="topbar">
             <div>
@@ -30,15 +35,36 @@
             <table>
             <thead>
                 <tr>
-                <th>Name</th>
+                <th>Item</th>
                 <th>Category</th>
                 <th>Stock</th>
                 <th>Unit</th>
                 <th>Expiry Date</th>
+                <th>Status</th>
+                <th>Actions</th>
                 </tr>
             </thead>
             <tbody id="inventory-list">
-                <!-- Inventory items will be inserted here from MongoDB -->
+                <?php foreach ($items as $item): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item['name'])?></td>
+                    <td><?php echo htmlspecialchars($item['category'])?></td>
+                    <td><?php echo (int)$item['stock']?></td>
+                    <td><?php echo htmlspecialchars($item['unit'])?></td>
+                    <td><?php echo htmlspecialchars($item['expiry_date'])?></td>
+                    <td>
+                        <?php
+                        $stock = (int)$item['stock'];
+                        echo $stock > 10 ? "In Stock" : ($stock > 0 ? "Low Stock" : "Out of Stock");
+                        ?>
+                    </td>
+                    
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
             </tbody>
             </table>
         </div>
