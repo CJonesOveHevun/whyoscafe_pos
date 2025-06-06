@@ -1,20 +1,20 @@
 FROM php:8.2-apache
 
 RUN apt-get update && apt-get install -y \
-libssl-dev pkg-config libcurl4-openssl-dev unzip curl
+    libssl-dev pkg-config libcurl4-openssl-dev unzip curl git
 
 RUN pecl install mongodb \
-&& docker-php-ext-enable mongodb
+    && docker-php-ext-enable mongodb
 
-# Enable Apache mod_rewrite (optional, but useful for routing)
 RUN a2enmod rewrite \
-&& echo "ServerName localhost" >> /etc/apache2/apache2.conf
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-WORKDIR /the/workdir/path
+# Set working directory to Apache's web root
+WORKDIR /var/www/html
 
-# Copy all your app files into Apache's web root
+# Copy your app to that path
 COPY . /var/www/html/
 
 RUN composer install --no-dev --optimize-autoloader
