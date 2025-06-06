@@ -10,7 +10,7 @@
         </div>
         <nav>
             <a href="dashboard.php">Dashboard</a>
-            <a href="#">Inventory</a>
+            <a href="inventory.php">Inventory</a>
             <a href="calculator.php">Ingredients Calculator</a>
             <a href="local_events.php">Local Events</a>
         </nav>

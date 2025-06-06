@@ -383,10 +383,12 @@ ul.card li {
 
 .events-container {
     background-color: white;
-    width: fit-content;
     padding: 32px;
     margin: 8px;
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 8px 2px;
 }
 
+.event-card{
+    margin: 16px 0px;
+}
