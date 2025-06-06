@@ -1,6 +1,7 @@
 <?php
 require_once '../backend/db_connect.php';
 
+use MongoDB\BSON\UTCDateTime;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
@@ -10,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'category'=>$_POST['category'],
         'stock'=>(int)$_POST['stock'],
         'unit'=>$_POST['unit'],
-        'expiry_date'=>strtotime($_POST['expiry_date'])
+        'expiry_date'=> $_POST['expiry_date']
         ]);
 
         header("Location: inventory.php");
