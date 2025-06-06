@@ -47,11 +47,25 @@ button {
 }
 
 .item-content {
-  background-color: #ffff;
-  margin: auto;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
+    background-color: #ffff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+}
+.item-content form {
+    display: flex;
+    row-gap: 5px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.item-content form div{
+    display: flex;
+}
+
+.item-content form label, .item-content form input, .item-content form div input, .item-content form div label{
+    flex-grow: 1.0;
+    gap: 4px;
 }
 
 .close {

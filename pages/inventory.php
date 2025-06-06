@@ -46,26 +46,28 @@
         <!-- Modal Dialog -->
         <div id="itemdialog" class="dialog">
             <div class="item-content">
-            <span onclick="closeDialog()" class="close">&times;</span>
-            <h2>Add New Item</h2>
-            <form action="add_item.php" method="POST">
-                <label>Item Name:</label>
-                <input type="text" name="name" required>
+                <span onclick="closeDialog()" class="close">&times;</span>
+                <h2>Add New Item</h2>
+                <form action="add_item.php" method="POST">
+                    <label>Item Name:</label>
+                    <input type="text" name="name" required>
 
-                <label>Category:</label>
-                <input type="text" name="category" required>
+                    <label>Category:</label>
+                    <input type="text" name="category" required>
+                    <div>
+                        <label>Stock:</label>
+                        <input type="number" name="stock" required>
 
-                <label>Stock:</label>
-                <input type="number" name="stock" required>
+                        <label>Unit:</label>
+                        <input type="text" name="unit" required>
+                    </div>
+                    
 
-                <label>Unit:</label>
-                <input type="text" name="unit" required>
+                    <label>Expiry Date:</label>
+                    <input type="date" name="expiry_date">
 
-                <label>Expiry Date:</label>
-                <input type="date" name="expiry_date">
-
-                <button type="submit">Add Item</button>
-            </form>
+                    <button type="submit">Add Item</button>
+                </form>
             </div>
         </div>
         
