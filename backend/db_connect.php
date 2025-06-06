@@ -1,5 +1,5 @@
 <?php
-require_once '../vendor/autoload.php';
+require_once __DIR__ . '../vendor/autoload.php';
 //$mongoUri = $_ENV['MONGO_URI'];
 //$dbname = $_ENV['DB_NAME'];
 $mongoUri = getenv('MONGO_URI');
