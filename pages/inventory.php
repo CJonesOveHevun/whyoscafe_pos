@@ -3,6 +3,11 @@
     <?php include '../sidebar.php'; ?>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/inventory.css">
+    <?php
+    require_once '../backend/db_connect.php';
+    $collections = $client->selectCollection($dbname,'inventory');
+    $items = $collections->find();
+    ?>
     <main>
         <div class="topbar">
             <div>
@@ -30,15 +35,39 @@
             <table>
             <thead>
                 <tr>
-                <th>Name</th>
+                <th>Item</th>
                 <th>Category</th>
                 <th>Stock</th>
                 <th>Unit</th>
                 <th>Expiry Date</th>
+                <th>Status</th>
+                <th>Actions</th>
                 </tr>
             </thead>
             <tbody id="inventory-list">
-                <!-- Inventory items will be inserted here from MongoDB -->
+                <?php foreach ($items as $item): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item['name'])?></td>
+                    <td><?php echo htmlspecialchars($item['category'])?></td>
+                    <td><?php echo (int)$item['stock']?></td>
+                    <td><?php echo htmlspecialchars($item['unit'])?></td>
+                    <td><?php echo htmlspecialchars($item['expiry_date'])?></td>
+                    <td>
+                        <?php
+                        $stock = (int)$item['stock'];
+                        echo $stock > 10 ? "In Stock" : ($stock > 0 ? "Low Stock" : "Out of Stock");
+                        ?>
+                    </td>
+                    
+                    <td>
+                        <button>Edit</button>
+                        <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this item?')">
+                        <input type="hidden" name="id" value="<?=$item["_id"]?>">
+                        <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
             </tbody>
             </table>
         </div>
@@ -53,15 +82,31 @@
                     <input type="text" name="name" required>
 
                     <label>Category:</label>
-                    <input type="text" name="category" required>
+                    <select id="category" name="category">
+                        <option value="">--Select Category---</option>
+                        <option value="Coffee Beans">Coffee Beans</option>
+                        <option value="Dairy Products">Dairy Products</option>
+                        <option value="Pastries">Pastries</option>
+                        <option value="Syrups">Syrups</option>
+                        <option value="Supplies">Supplies</option>
+                        <option value="Sweeteners">Sweeteners</option>
+                    </select>
                     <div>
                         <label>Stock:</label>
-                        <input type="number" name="stock" required>
+                        <input type="number" min="0" name="stock" required>
 
                         <label>Unit:</label>
-                        <input type="text" name="unit" required>
+                        <select id="unit" name="unit">
+                        <option value="g">Grams</option>
+                        <option value="kg">Kilograms</option>
+                        <option value="mg">Milligrams</option>
+                        <option value="L">Liters</option>
+                        <option value="mL">Milliliters</option>
+                        <option value="pieces">Pieces</option>
+                    </select>
                     </div>
-                    
+                    <label>Price:</label>
+                    <input type="number" name="price" step="0.01" min="0" required>
 
                     <label>Expiry Date:</label>
                     <input type="date" name="expiry_date">

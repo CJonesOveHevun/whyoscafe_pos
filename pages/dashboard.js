@@ -1,6 +1,7 @@
 let predict_bordercolor ='rgb(255, 209, 60)';
 let history_bordercolor ='rgb(32, 77, 173)';
 let bgcolor = 'rgba(223, 197, 50, 0.1)';
+const stockLevels = window.inventoryData.stockLevels;
 
 document.addEventListener('DOMContentLoaded', function () {
     const demandCtx = document.getElementById('demandChart').getContext('2d');
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         data: {
             labels: ['In Stock', 'Low Stock', 'Out of Stock'],
             datasets: [{
-                data: [6, 1, 1],
+                data: stockLevels,
                 backgroundColor: ['#22c55e', '#f97316', '#ef4444'],
                 hoverOffset: 10
             }]
