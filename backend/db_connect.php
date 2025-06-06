@@ -1,6 +1,6 @@
 <?php
 require_once '../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable('..');
 $dotenv->load();
 
 $mongoUri = $_ENV['MONGO_URI'];
