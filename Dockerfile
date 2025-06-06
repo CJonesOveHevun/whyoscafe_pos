@@ -17,5 +17,5 @@ WORKDIR /var/www/html
 # Copy your app to that path
 COPY . /var/www/html/
 
-
+RUN composer install --no-dev --optimize-autoloader
 EXPOSE 80
