@@ -3,8 +3,26 @@
     <?php include '../sidebar.php'; ?>
     <link rel="stylesheet" href="../assets/style.css">
     <main>
-        <h1>Ingredients Calculator</h1>
-        <p class="subtitle">Calculate precise ingredient measurements for your beverages</p>
+        <div class="topbar">
+            <div>
+                <h2>Ingredients Calculator</h2>
+                <p class="dashboard-subtitle">Calculate precise ingredient measurements for your beverages</p>
+            </div>
+
+            <div class="notif">
+                <div class="notifications">
+                    <span class="bell">🔔</span>
+                    <span class="badge">3</span>
+                </div>
+                <div class="datetime">
+                    <span class="date"><?php echo date('F j, Y'); ?></span>
+                    <span class="time"><?php echo date('h:i A'); ?></span>
+                </div>
+                    
+            </div>
+            
+        </div>
+        
         <div class="content-grid">
             <form id="recipeForm" class="card">
                 <h2>Recipe Calculator</h2>

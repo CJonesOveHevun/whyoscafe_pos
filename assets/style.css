@@ -14,7 +14,7 @@ body {
 
 main {
     width: 100%;
-    padding: 2rem;
+    padding: 0rem;
 }
 
 .sidebar {
@@ -23,10 +23,13 @@ main {
     padding: 2rem;
     width: 290px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sidebar h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0.2rem;
 }
 
@@ -50,9 +53,9 @@ main {
 
 .sidebar nav a.active,
 .sidebar nav a:hover {
-    background-color: #f7941d;
+    background-color: #ffc527;
     border-radius: 10px;
-    color: #3a1e1e;
+    color: #1f1d3a;
     padding-left: 10px;
 }
 
@@ -60,6 +63,24 @@ main {
     margin-top: auto;
     font-size: 0.85rem;
     margin-top: 2rem;
+}
+
+.sidebar-icon {
+    background-image: url("../assets/cafe_icon.jpg");
+    background-size: contain;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+
+.sidebar-headers{
+    display: flex;
+}
+.sidebar-headers div {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 2px;
 }
 
 .container {
@@ -74,10 +95,6 @@ main h1 {
     margin-bottom: 0.3rem;
 }
 
-.subtitle {
-    color: #f7941d;
-    margin-bottom: 1.5rem;
-}
 
 .content-grid {
     display: grid;
@@ -157,7 +174,7 @@ ul.card li {
 
 .dashboard-subtitle {
     color: #d97706;
-    margin-top: -0.5rem;
+    margin-top: 0.4rem;
 }
 
 .dashboard-cards {
@@ -177,19 +194,19 @@ ul.card li {
 }
 
 .total-items {
-    background-color: #fefcfb;
+    background-color: #ffffff;
 }
 
 .low-stock {
-    background-color: #fef2f2;
+    background-color: #faf4f4;
 }
 
 .expiring {
-    background-color: #fffbeb;
+    background-color: #f8f8f6;
 }
 
 .total-value {
-    background-color: #fefcfb;
+    background-color: #ffffff;
 }
 
 .card p {
@@ -233,7 +250,9 @@ ul.card li {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: #c4c4c4 16px 4px 20px 01px;
 }
 
 .left-info {
@@ -248,15 +267,23 @@ ul.card li {
 }
 
 .datetime {
+    display: flex;
+    flex-direction: column;
     font-size: 0.85rem;
     color: #555;
     line-height: 1.2;
 }
+.notif{
+    display: flex;
+
+}
+
 
 .notifications {
     position: relative;
     font-size: 1.2rem;
     margin-bottom: 0.25rem;
+    margin-right: 0.8rem;
 }
 
 .bell {
@@ -287,7 +314,7 @@ ul.card li {
 .chart-section {
     flex: 1;
     min-width: 300px;
-    background: #fff7ed;
+    background: #fffffe;
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -297,7 +324,7 @@ ul.card li {
 .chart-title {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #92400e;
+    color: #312c29;
     margin-bottom: 1rem;
     text-align: left;
 }
@@ -313,7 +340,7 @@ ul.card li {
 .recent-activities, .alerts-notifications {
     flex: 1;
     min-width: 300px;
-    background: #fefcfb;
+    background: #ffffff;
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -322,7 +349,7 @@ ul.card li {
 .recent-activities h3,
 .alerts-notifications h3 {
     margin-bottom: 0.75rem;
-    color: #92400e;
+    color: #2b1b11;
     font-weight: 600;
 }
 
@@ -334,15 +361,15 @@ ul.card li {
 
 .activity-list li {
     padding: 0.4rem 0;
-    border-bottom: 1px solid #f0eae2;
+    border-bottom: 1px solid #ececec;
     font-size: 0.95rem;
 }
 
 .alert-card {
-    background-color: #fef3c7;
+    background-color: #ffece0;
     padding: 0.75rem;
     border-radius: 8px;
-    color: #92400e;
+    color: #da7961;
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
 }
@@ -354,3 +381,14 @@ ul.card li {
     margin-top: 0.3rem;
 }
 
+.events-container {
+    background-color: white;
+    padding: 32px;
+    margin: 8px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 8px 2px;
+}
+
+.event-card{
+    margin: 16px 0px;
+}
