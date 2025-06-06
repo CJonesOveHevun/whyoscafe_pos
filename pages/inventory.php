@@ -79,13 +79,28 @@
                     <input type="text" name="name" required>
 
                     <label>Category:</label>
-                    <input type="text" name="category" required>
+                    <select id="category" name="category">
+                        <option value="">--Select Category---</option>
+                        <option value="Coffee Beans">Coffee Beans</option>
+                        <option value="Dairy Products">Dairy Products</option>
+                        <option value="Pastries">Pastries</option>
+                        <option value="Syrups">Syrups</option>
+                        <option value="Supplies">Supplies</option>
+                        <option value="Sweeteners">Sweeteners</option>
+                    </select>
                     <div>
                         <label>Stock:</label>
-                        <input type="number" name="stock" required>
+                        <input type="number" min="0" name="stock" required>
 
                         <label>Unit:</label>
-                        <input type="text" name="unit" required>
+                        <select id="unit" name="unit">
+                        <option value="g">Grams</option>
+                        <option value="kg">Kilograms</option>
+                        <option value="mg">Milligrams</option>
+                        <option value="L">Liters</option>
+                        <option value="mL">Milliliters</option>
+                        <option value="pieces">Pieces</option>
+                    </select>
                     </div>
                     
 
