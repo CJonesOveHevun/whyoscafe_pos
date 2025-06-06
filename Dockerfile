@@ -4,6 +4,15 @@ RUN apt-get update && apt-get install -y \
     unzip curl pkg-config libssl-dev libcurl4-openssl-dev \
     libicu-dev libpq-dev git zip dnsutils libnss3 ca-certificates
 
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    pkg-config \
+    libcurl4-openssl-dev \
+    ca-certificates \
+    openssl
+RUN update-ca-certificates
+
+
 RUN pecl install mongodb \
     && docker-php-ext-enable mongodb
 
