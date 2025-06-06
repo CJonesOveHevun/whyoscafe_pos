@@ -3,8 +3,11 @@ require_once '../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable('..');
 $dotenv->load();
 
-$mongoUri = $_ENV['MONGO_URI'];
-$dbname = $_ENV['DB_NAME'];
+//$mongoUri = $_ENV['MONGO_URI'];
+//$dbname = $_ENV['DB_NAME'];
+$mongoUri = getenv('MONGO_URI');
+$dbname = getenv('DB_NAME');
+
 
 $client = new MongoDB\Client($mongoUri);
 $collections = $client->$dbname->inventory;
