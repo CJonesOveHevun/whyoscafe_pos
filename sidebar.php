@@ -1,6 +1,14 @@
 <aside class="sidebar">
-    <h2><div class="sidebar-icon"></div>Whyos Cafe</h2>
-    <p class="tagline">Inventory System</p>
+    
+    <div class="sidebar-headers">
+        <div class="sidebar-icon"></div>
+        <div>
+            <h2>Whyos Cafe</h2>
+            <p class="tagline">Inventory System</p>
+        </div>
+        
+    </div>
+    
     <nav>
         <a href="dashboard.php">Dashboard</a>
         <a href="#">Inventory</a>

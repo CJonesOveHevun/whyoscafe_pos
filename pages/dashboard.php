@@ -3,20 +3,27 @@
     <?php include '../sidebar.php'; ?>  
     <link rel="stylesheet" href="../assets/style.css">
     <main>
-        <div class="dashboard">
-            <?php date_default_timezone_set('Asia/Manila'); ?>
+        <?php date_default_timezone_set('Asia/Manila'); ?>
             <div class="topbar">
-            <h2 class="dash">Dashboard</h2>
-            <p class="dashboard-subtitle">Inventory forecasting and management overview</p>
-                <div class="notifications">
-                    <span class="bell">🔔</span>
-                    <span class="badge">3</span>
+                <div>
+                    <h2>Dashboard</h2>
+                    <p class="dashboard-subtitle">Inventory forecasting and management overview</p>
                 </div>
-                <div class="datetime">
-                    <span class="date"><?php echo date('F j, Y'); ?></span>
-                    <span class="time"><?php echo date('h:i A'); ?></span>
+            
+                <div class="notif">
+                    <div class="notifications">
+                        <span class="bell">🔔</span>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="datetime">
+                        <span class="date"><?php echo date('F j, Y'); ?></span>
+                        <span class="time"><?php echo date('h:i A'); ?></span>
+                    </div>
+                    
                 </div>
             </div>
+        <div class="dashboard">
+            
 
             <div class="dashboard-cards">
                 <div class="card total-items">

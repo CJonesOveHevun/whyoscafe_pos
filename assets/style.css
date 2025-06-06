@@ -14,7 +14,7 @@ body {
 
 main {
     width: 100%;
-    padding: 2rem;
+    padding: 0rem;
 }
 
 .sidebar {
@@ -26,7 +26,7 @@ main {
 }
 
 .sidebar h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0.2rem;
 }
 
@@ -64,8 +64,20 @@ main {
 
 .sidebar-icon {
     background-image: url("../assets/cafe_icon.jpg");
-    height: 100px;
-    width: 100px;
+    background-size: contain;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+
+.sidebar-headers{
+    display: flex;
+}
+.sidebar-headers div {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 2px;
 }
 
 .container {
@@ -239,7 +251,8 @@ ul.card li {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
+    background-color: white;
 }
 
 .left-info {
@@ -254,15 +267,23 @@ ul.card li {
 }
 
 .datetime {
+    display: flex;
+    flex-direction: column;
     font-size: 0.85rem;
     color: #555;
     line-height: 1.2;
 }
+.notif{
+    display: flex;
+
+}
+
 
 .notifications {
     position: relative;
     font-size: 1.2rem;
     margin-bottom: 0.25rem;
+    margin-right: 0.8rem;
 }
 
 .bell {
@@ -362,5 +383,9 @@ ul.card li {
 
 .events-container {
     background-color: white;
+    width: fit-content;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 8px 2px;
 }
 

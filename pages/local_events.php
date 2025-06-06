@@ -3,16 +3,27 @@
     <?php include '../sidebar.php'; ?>
     <link rel="stylesheet" href="../assets/style.css">
     <main>
-        <div class="dashboard">
-            <?php date_default_timezone_set('Asia/Manila'); ?>
-            <div class="topbar">
-                <h2 class="dash">Local Events</h2>
-                <p class="dashboard-subtitle">Upcoming Philippine holidays and regional events</p>
-                <div class="datetime">
-                    <span class="date"><?php echo date('F j, Y'); ?></span>
-                    <span class="time"><?php echo date('h:i A'); ?></span>
+        <div class="topbar">
+                <div>
+                    <h2>Local Events - Philippines</h2>
+                    <p class="dashboard-subtitle">Upcoming Philippine holidays and regional events</p>
+                </div>
+                
+                <div class="notif">
+                    <div class="notifications">
+                        <span class="bell">🔔</span>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="datetime">
+                        <span class="date"><?php echo date('F j, Y'); ?></span>
+                        <span class="time"><?php echo date('h:i A'); ?></span>
+                    </div>
+                    
                 </div>
             </div>
+        <div class="dashboard">
+            <?php date_default_timezone_set('Asia/Manila'); ?>
+            
 
             <div class="events-container">
                 <div class="event-card">

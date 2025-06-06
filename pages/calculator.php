@@ -3,8 +3,14 @@
     <?php include '../sidebar.php'; ?>
     <link rel="stylesheet" href="../assets/style.css">
     <main>
-        <h1>Ingredients Calculator</h1>
-        <p class="subtitle">Calculate precise ingredient measurements for your beverages</p>
+        <div class="topbar">
+            <div>
+                <h2>Ingredients Calculator</h2>
+                <p class="subtitle">Calculate precise ingredient measurements for your beverages</p>
+            </div>
+            
+        </div>
+        
         <div class="content-grid">
             <form id="recipeForm" class="card">
                 <h2>Recipe Calculator</h2>
