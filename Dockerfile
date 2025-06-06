@@ -12,7 +12,9 @@ RUN apt-get update && apt-get install -y \
     gnupg \
     zip
 
-RUN update-ca-certificates
+# Reinstall CA certs with curl and force system trust
+RUN curl -o /usr/local/share/ca-certificates/mongoCA.crt https://www.digicert.com/CACerts/DigiCertGlobalRootCA.crt.pem \
+ && update-ca-certificates
 
 RUN pecl install mongodb \
     && docker-php-ext-enable mongodb
