@@ -1,0 +1,394 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f9f7f4;
+    color: #3a2e2e;
+    margin: 0px;
+}
+
+main {
+    width: 100%;
+    padding: 0rem;
+}
+
+.sidebar {
+    background-color: #1f49a1;
+    color: #fff;
+    padding: 2rem;
+    width: 290px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+}
+
+.sidebar .tagline {
+    font-size: 0.9rem;
+    color: #f3cba5;
+    margin-bottom: 2rem;
+}
+
+
+.sidebar nav a {
+    gap: 3px;
+    margin: 4px 0px;
+    display: block;
+    padding: 0.8rem 0.2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    background-color: #ffc527;
+    border-radius: 10px;
+    color: #1f1d3a;
+    padding-left: 10px;
+}
+
+.sidebar .footer {
+    margin-top: auto;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+.sidebar-icon {
+    background-image: url("../assets/cafe_icon.jpg");
+    background-size: contain;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+
+.sidebar-headers{
+    display: flex;
+}
+.sidebar-headers div {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 2px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding: 0rem;
+}
+
+main h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    grid-template-areas:
+        "calc results"
+        "inventory converter";
+}
+
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+}
+
+.card label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.card input, .card select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.btn-primary {
+    margin-top: 1rem;
+    background-color: #f7941d;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #e17c00;
+}
+
+.conversions p {
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    color: #a35c1d;
+}
+
+.ul-form{
+    list-style: none;
+}
+
+ul.card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+/*    DASHBOARD   */
+.dashboard {
+    padding: 1rem;
+}
+
+.dash {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-subtitle {
+    color: #d97706;
+    margin-top: 0.4rem;
+}
+
+.dashboard-cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+    border-radius: 10px;
+    padding: 1rem;
+    background: #fefcfb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.total-items {
+    background-color: #ffffff;
+}
+
+.low-stock {
+    background-color: #faf4f4;
+}
+
+.expiring {
+    background-color: #f8f8f6;
+}
+
+.total-value {
+    background-color: #ffffff;
+}
+
+.card p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.info {
+    color: green;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.warning {
+    color: red;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.info-yellow {
+    color: #b45309;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.calendar-info {
+    color: #92400e;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+/* TIME AND DATE - DASHBOARD PAGE */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: #c4c4c4 16px 4px 20px 01px;
+}
+
+.left-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.datetime {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.2;
+}
+.notif{
+    display: flex;
+
+}
+
+
+.notifications {
+    position: relative;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.8rem;
+}
+
+.bell {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* CHARTS */
+
+.dashboard-charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.chart-section {
+    flex: 1;
+    min-width: 300px;
+    background: #fffffe;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    height: 300px;
+}
+
+.chart-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #312c29;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Recent Activities and Alerts */
+.bottom-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.recent-activities, .alerts-notifications {
+    flex: 1;
+    min-width: 300px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.recent-activities h3,
+.alerts-notifications h3 {
+    margin-bottom: 0.75rem;
+    color: #2b1b11;
+    font-weight: 600;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #ececec;
+    font-size: 0.95rem;
+}
+
+.alert-card {
+    background-color: #ffece0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    color: #da7961;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.alert-detail {
+    display: block;
+    font-size: 0.85rem;
+    color: #b45309;
+    margin-top: 0.3rem;
+}
+
+.events-container {
+    background-color: white;
+    padding: 32px;
+    margin: 8px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 8px 2px;
+}
+
+.event-card{
+    margin: 16px 0px;
+}
