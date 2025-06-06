@@ -24,7 +24,9 @@
         <div class="dashboard">
             <?php date_default_timezone_set('Asia/Manila'); ?>
             
-
+            <div class="events-container">
+                
+            </div>
             <div class="events-container">
                 <div class="event-card">
                     <h3>Independence Day</h3>
