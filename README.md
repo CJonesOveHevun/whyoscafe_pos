@@ -7,23 +7,51 @@ It allows users to add items and view dashboards dsiplaying inventory records.
 Deployed web-link:
 https://whyoscafepos-production.up.railway.app/
 
-<div>
-  Deployment: <a href="https://railway.com/">Railway.com</a>
-</div>
-<div>
-  Database: <a href="https://www.mongodb.com" >MongoDB</a> via Atlas
-</div>
+<table>
+  <tr>
+    <th>
+    </th>
+    <th>
+    Platform
+    </th>
+  </tr>
+  <tr>
+    <th>
+    Deployment: 
+    </th>
+    <th>
+    <a href="https://railway.com/">Railway.com</a>
+    </th>
+    
+  </tr>
+  <tr>
+    <th>
+    Database: 
+    </th>
+    <th>
+    <a href="https://www.mongodb.com" >MongoDB</a> via Atlas
+    </th>
+  </tr>
+</table>
+ 
 
 
 
-# 4 Pages created
+# Pages Created
 ## 1. dashbaord
 It displays numeric datas from the inventory,
+![image](https://github.com/user-attachments/assets/c5c56112-8277-4834-8acc-76bc1d42ee25)
 consists of: 
 - total number of items
 - total number of low-stock items
 - Items Expiring soon
 - Total value from the inventory
+
+Charts:
+- <b>[Not working]</b> Demand Forecasts
+- Inventory Levels
+
+
 
 ## 2. Inventory Management
 This page uses MongoDB for storing item data and performs simple CRUD operations
