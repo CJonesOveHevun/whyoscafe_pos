@@ -15,7 +15,7 @@ https://whyoscafepos-production.up.railway.app/
 
 
 
-# 5 Pages created
+# 4 Pages created
 ## 1. dashbaord
 It displays numeric datas from the inventory,
 consists of: 
@@ -29,3 +29,6 @@ This page uses MongoDB for storing item data and performs simple CRUD operations
 
 ## 3. Ingredients Calculator
 This page is dedicated for calculating bulk orders and displays the total price in a few clicks. This also provide unit converters for measurements
+
+## 4. Local Events
+Summarizes Upcoming local events that may affect the shops demands
