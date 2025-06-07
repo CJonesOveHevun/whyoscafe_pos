@@ -29,7 +29,7 @@
         </div>
 
         <div class="main-content">
-            <div class="main-topbar">
+            <div class="main_topbar">
                 <h1>Inventory Management</h1>
                 <button onclick="openDialog()">+ Add Item</button>
             </div>

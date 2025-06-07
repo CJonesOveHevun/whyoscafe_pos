@@ -11,11 +11,11 @@ body {
     background-color: #ffffff;
     box-shadow: 0px 4px 8px 2px rgb(230, 230, 230) ;
 }
-
-.main-topbar{
+.main_topbar{
   display: flex;
   justify-content: space-between;
 }
+
 
 table {
     width: 100%;
