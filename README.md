@@ -63,9 +63,13 @@ Charts:
 
 ## 2. Inventory Management
 This page uses MongoDB for storing item data and performs simple CRUD operations
+![image](https://github.com/user-attachments/assets/c003762a-2f56-4612-8366-148756abddfc)
+
 
 ## 3. Ingredients Calculator
 This page is dedicated for calculating bulk orders and displays the total price in a few clicks. This also provide unit converters for measurements
+![image](https://github.com/user-attachments/assets/7e6848c6-b826-4944-b543-50451c2fe773)
+
 
 ## 4. Local Events
 Summarizes Upcoming local events that may affect the shops demands
