@@ -2,6 +2,11 @@
 <div class="container">
     <?php include '../sidebar.php'; ?>
     <link rel="stylesheet" href="../assets/style.css">
+    <?php
+    require_once '../backend/db_connect.php';
+    $eventCollections = $client->selectCollection($dbname, 'events');
+    $events = $eventCollections->find();
+    ?>
     <main>
         <div class="topbar">
                 <div>
@@ -29,37 +34,63 @@
                     <h2>Local Events</h2>
                     <div>
                         <label for="events"></label>
-                        <select id="events">
+                        <select id="events" class="input-generic">
                             <option value="all">All...</option>
                             <option value="month">This Month</option>
                             <option value="year">This Year</option>
                         </select>
-                        <button type="button">+ Add event</button>
+                        <button type="button" id="add_event_btn">+ Add event</button>
                     </div>
                 </div>
                 
             </div>
             <div class="events-container">
+                <?php foreach($events as $event):?>
                 <div class="event-card">
-                    <h3>Independence Day</h3>
-                    <p class="event-date">June 12, 2025</p>
-                    <p class="event-description">A national holiday commemorating Philippine independence from Spanish rule.</p>
+                    <h3><?php echo htmlspecialchars($event['name'])?></h3>
+                    <p class="event-date"><?php echo htmlspecialchars($event['date'])?></p>
+                    <p class="event-description"><?php echo htmlspecialchars($event['description'])?></p>
                 </div>
+                <?php endforeach;?>
 
-                <div class="event-card">
-                    <h3>Kadayawan Festival</h3>
-                    <p class="event-date">August 2025</p>
-                    <p class="event-description">A celebration of life, thanksgiving for nature's gifts, and cultural heritage in Davao City.</p>
-                </div>
-
-                <div class="event-card">
-                    <h3>Buwan ng Wika</h3>
-                    <p class="event-date">August 1-31, 2025</p>
-                    <p class="event-description">A month-long celebration highlighting Filipino language and culture in schools nationwide.</p>
-                </div>
             </div>
         </div>
     </main>
+    <div id="event-dialog" class="dialog">
+        <div class="modal-content">
+            <div>
+                <h2>Add New Event</h2>
+                <span class="close_dialog" onclick="closeDialog()">&times;</span>
+            </div>
+            
+            
+            <form action="add_event.php" method="POST">
+                <label for="event_name">Event Name:</label>
+                <input type="text" id="event_name" name="event_name" required class="input-generic">
+
+                <label for="event_date">Event Date:</label>
+                <input type="date" id="event_date" name="event_date" required class="input-generic">
+
+                <label for="event_description">Description:</label>
+                <textarea id="event_description" name="event_description" rows="4" required class="input-generic event-desc"></textarea>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn-confirm">Save Event</button>
+                    <button type="button" class="btn-cancel" onclick="closeDialog()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
+<script>
+    
+    function openDialog(){
+        document.getElementById("event-dialog").style.display = "block";
+    }
+    function closeDialog(){
+        document.getElementById("event-dialog").style.display = "none";
+    }
+    document.getElementById("add_event_btn").addEventListener("click", openDialog);
+</script>
 </body>
 </html>

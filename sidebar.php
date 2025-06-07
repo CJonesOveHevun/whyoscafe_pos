@@ -9,10 +9,10 @@
         
         </div>
         <nav>
-            <a href="dashboard.php">Dashboard</a>
-            <a href="inventory.php">Inventory</a>
-            <a href="calculator.php">Ingredients Calculator</a>
-            <a href="local_events.php">Local Events</a>
+            <a href="dashboard.php"><img src="../assets/dashboard.png" alt="dashboard" width="24" height="24">Dashboard</a>
+            <a href="inventory.php"><img src="../assets/inventory.png" alt="inventory" width="24" height="24">Inventory</a>
+            <a href="calculator.php"><img src="../assets/calculator.png" alt="calculator" width="24" height="24">Ingredients Calculator</a>
+            <a href="local_events.php"><img src="../assets/events.png" alt="events" width="24" height="24">Local Events</a>
         </nav>
     </div>
     
