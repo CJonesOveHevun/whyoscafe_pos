@@ -2,6 +2,11 @@
 <div class="container">
     <?php include '../sidebar.php'; ?>
     <link rel="stylesheet" href="../assets/style.css">
+    <?php
+    require_once '../backend/db_connect.php';
+    $collections = $client->selectCollection($dbname,'inventory');
+    $items = $collections->find();
+    ?>
     <main>
         <div class="topbar">
             <div>
@@ -68,11 +73,9 @@
             <section class="card inventory">
                 <h2>Ingredient Inventory</h2>
                 <ul class="ul-form">
-                    <li><strong>Arabica Coffee Beans</strong> — 15.500 kg</li>
-                    <li><strong>Caramel Syrup</strong> — 2.100 L</li>
-                    <li><strong>Croissants</strong> — 50,000 pieces</li>
-                    <li><strong>Oat Milk</strong> — 8.500 L</li>
-                    <li><strong>Paper Cups</strong> — 500,000 pieces</li>
+                    <?php foreach ($items as $item): ?>
+                    <li><strong><?php echo htmlspecialchars($item['name'])?></strong> — <?php echo htmlspecialchars($item['stock']) . ' ' . htmlspecialchars($item['unit'])?></li> 
+                    <?php endforeach; ?>
                 </ul>
             </section>
 
