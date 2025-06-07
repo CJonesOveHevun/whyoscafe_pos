@@ -8,6 +8,7 @@
     $items = $collections->find([],['limit'=>10]);
     ?>
     <main>
+        <?php date_default_timezone_set('Asia/Manila'); ?>
         <div class="topbar">
             <div>
                 <h2>Ingredients Calculator</h2>
