@@ -4,9 +4,9 @@ This is an sample of an inventory system developed by
 3 members in this group
 
 Deployed web-link:
+https://whyoscafepos-production.up.railway.app/
 
-
-Database used: MongoDB via Atlas
+Database used: <a href="https://www.mongodb.com" >MongoDB</a> via Atlas
 
 # 5 Pages created
 ## 1. dashbaord
