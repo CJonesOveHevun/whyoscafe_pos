@@ -29,8 +29,11 @@
         </div>
 
         <div class="main-content">
-            <h1>Inventory Management</h1>
-            <button onclick="openDialog()">+ Add Item</button>
+            <div class="main_topbar">
+                <h1>Inventory Management</h1>
+                <button onclick="openDialog()">+ Add Item</button>
+            </div>
+            
 
             <table>
             <thead>
@@ -55,12 +58,13 @@
                     <td>
                         <?php
                         $stock = (int)$item['stock'];
-                        echo $stock > 10 ? "In Stock" : ($stock > 0 ? "Low Stock" : "Out of Stock");
+                        echo $stock > 10 ? "<p class=\"instock\">In Stock</p>" : ($stock > 0 ? "<p class=\"lowstock\">Low Stock</p>" : "<p class=outofstock\">Out of Stock</p>");
                         ?>
                     </td>
                     
                     <td>
-                        <button>Edit</button>
+                        <button onclick="openEditDialog('<?= $item['_id'] ?>', '<?= htmlspecialchars($item['name'], ENT_QUOTES) ?>', '<?= $item['category'] ?>', <?= (int)$item['stock'] ?>, '<?= $item['expiry_date'] ?>')">Edit</button>
+
                         <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this item?')">
                         <input type="hidden" name="id" value="<?=$item["_id"]?>">
                         <button type="submit">Delete</button>
@@ -72,7 +76,7 @@
             </table>
         </div>
 
-        <!-- Modal Dialog -->
+        <!-- create Dialog -->
         <div id="itemdialog" class="dialog">
             <div class="item-content">
                 <span onclick="closeDialog()" class="close">&times;</span>
@@ -115,7 +119,37 @@
                 </form>
             </div>
         </div>
-        
+        <!--update dialog-->
+        <div id="editItemDialog" class="dialog">
+            <div class="item-content">
+            <span onclick="closeEditDialog()" class="close">&times;</span>
+            <h2>Edit Item</h2>
+                <form id="editItemForm" method="POST" action="update_item.php">
+                    <input type="hidden" name="id" id="edit-id">
+                    
+                    <label>Item Name:</label>
+                    <input type="text" name="name" id="edit-name" required>
+                    
+                    <label>Category:</label>
+                    <select name="category" id="edit-category">
+                        <option value="Coffee Beans">Coffee Beans</option>
+                        <option value="Dairy Products">Dairy Products</option>
+                        <option value="Pastries">Pastries</option>
+                        <option value="Syrups">Syrups</option>
+                        <option value="Supplies">Supplies</option>
+                        <option value="Sweeteners">Sweeteners</option>
+                    </select>
+                    
+                    <label>Stock:</label>
+                    <input type="number" name="stock" id="edit-stock" min="0" required>
+                    
+                    <label>Expiry Date:</label>
+                    <input type="date" name="expiry_date" id="edit-expiry">
+
+                    <button type="submit">Update Item</button>
+                </form>
+            </div>
+        </div>
 
 
     </main>
@@ -126,6 +160,19 @@
     }
     function closeDialog(){
         document.getElementById("itemdialog").style.display = "none";
+    }
+
+    function openEditDialog(id, name, category, stock, expiry){
+        document.getElementById("edit-id").value = id;
+        document.getElementById("edit-name").value = name;
+        document.getElementById("edit-category").value = category;
+        document.getElementById("edit-stock").value = stock;
+        document.getElementById("edit-expiry").value = expiry;
+        document.getElementById("editItemDialog").style.display = "block";
+
+    }
+    function closeEditDialog(){
+        document.getElementById("editItemDialog").style.display = "none";
     }
 </script>
 </body>

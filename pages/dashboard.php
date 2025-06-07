@@ -20,6 +20,9 @@
     $expiring = 0;
     $totalValue = 0;
 
+    $itemsLowStock = [];
+    $itemsOutofStock = [];
+
     $today = new DateTime();
     $today->setTime(0, 0);
     $inSevenDays = (clone $today)->modify('+7 days');
@@ -46,8 +49,10 @@
             $instocks++;
         } elseif ($stock > 0 && $stock <= $lowstockThreshold) {
             $lowstocks++;
+            $itemsLowStock[] = $item;
         } else {
             $outofstocks++;
+            $itemsOutofStock[] = $item;
         }
     }
     $inventoryStatus = [$instocks, $lowstocks,$outofstocks];
@@ -123,8 +128,16 @@
                 <div class="alerts-notifications">
                     <h3>⚠ Alerts & Notifications</h3>
                     <div class="alert-card">
-                        <p>⚠ <strong>Caramel Syrup</strong> is low in stock</p>
-                        <span class="alert-detail">Only 2.100 L remaining</span>
+                        <?php foreach($itemsLowStock as $lowitems){
+                                echo '<p><strong>' . htmlspecialchars($lowitems['name']) .'</strong> is low in stock</p>';
+                                echo '<span class=\"alert-detail\">Only ' . htmlspecialchars($lowitems['stock']) . ' '. htmlspecialchars($lowitems['unit']) . ' remaining';
+
+                            }
+                            foreach($itemsOutofStock as $noitems){
+                                echo "<p><strong>" . htmlspecialchars($outItem['name']) . "</strong> is out of stock</p>";
+                                echo "<span class='alert-detail'>Restock immediately!</span>";
+                            }    
+                        ?>
                     </div>
                 </div>
             </div>
