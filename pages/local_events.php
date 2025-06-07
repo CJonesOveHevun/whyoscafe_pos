@@ -29,12 +29,12 @@
                     <h2>Local Events</h2>
                     <div>
                         <label for="events"></label>
-                        <select id="events">
+                        <select id="events" class="input-generic">
                             <option value="all">All...</option>
                             <option value="month">This Month</option>
                             <option value="year">This Year</option>
                         </select>
-                        <button type="button">+ Add event</button>
+                        <button type="button" id="add_event_btn">+ Add event</button>
                     </div>
                 </div>
                 
@@ -60,6 +60,36 @@
             </div>
         </div>
     </main>
+    <div id="event-dialog" class="dialog">
+        <div class="modal-content">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <h2>Add New Event</h2>
+            <form action="../backend/add_event.php" method="POST">
+                <label for="event_name">Event Name:</label>
+                <input type="text" id="event_name" name="event_name" required class="input-generic">
+
+                <label for="event_date">Event Date:</label>
+                <input type="date" id="event_date" name="event_date" required class="input-generic">
+
+                <label for="event_description">Description:</label>
+                <textarea id="event_description" name="event_description" rows="4" required class="input-generic"></textarea>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn-confirm">Save Event</button>
+                    <button type="button" class="btn-cancel" onclick="closeDialog()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
+<script>
+    function openDialog(){
+        document.getElementById("event_dialog").style.display = "block";
+    }
+    function closeDialog(){
+        document.getElementById("event_dialog").style.display = "none";
+    }
+
+</script>
 </body>
 </html>

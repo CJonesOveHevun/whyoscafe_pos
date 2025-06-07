@@ -83,10 +83,10 @@
                 <h2>Add New Item</h2>
                 <form action="add_item.php" method="POST">
                     <label>Item Name:</label>
-                    <input type="text" name="name" required>
+                    <input class="input-generic" type="text" name="name" required>
 
                     <label>Category:</label>
-                    <select id="category" name="category">
+                    <select class="input-generic" id="category" name="category">
                         <option value="">--Select Category---</option>
                         <option value="Coffee Beans">Coffee Beans</option>
                         <option value="Dairy Products">Dairy Products</option>
@@ -97,10 +97,10 @@
                     </select>
                     <div>
                         <label>Stock:</label>
-                        <input type="number" min="0" name="stock" required>
+                        <input class="input-generic" type="number" min="0" name="stock" required>
 
                         <label>Unit:</label>
-                        <select id="unit" name="unit">
+                        <select class="input-generic" id="unit" name="unit">
                         <option value="g">Grams</option>
                         <option value="kg">Kilograms</option>
                         <option value="mg">Milligrams</option>
@@ -110,10 +110,10 @@
                     </select>
                     </div>
                     <label>Price:</label>
-                    <input type="number" name="price" step="0.01" min="0" required>
+                    <input class="input-generic" type="number" name="price" step="0.01" min="0" required>
 
                     <label>Expiry Date:</label>
-                    <input type="date" name="expiry_date">
+                    <input class="input-generic" type="date" name="expiry_date">
 
                     <button type="submit">Add Item</button>
                 </form>
@@ -125,13 +125,13 @@
             <span onclick="closeEditDialog()" class="close">&times;</span>
             <h2>Edit Item</h2>
                 <form id="editItemForm" method="POST" action="update_item.php">
-                    <input type="hidden" name="id" id="edit-id">
+                    <input class="input-generic" type="hidden" name="id" id="edit-id">
                     
                     <label>Item Name:</label>
-                    <input type="text" name="name" id="edit-name" required>
+                    <input class="input-generic" type="text" name="name" id="edit-name" required>
                     
                     <label>Category:</label>
-                    <select name="category" id="edit-category">
+                    <select name="category" id="edit-category" class="input-generic">
                         <option value="Coffee Beans">Coffee Beans</option>
                         <option value="Dairy Products">Dairy Products</option>
                         <option value="Pastries">Pastries</option>
@@ -141,10 +141,10 @@
                     </select>
                     
                     <label>Stock:</label>
-                    <input type="number" name="stock" id="edit-stock" min="0" required>
+                    <input class="input-generic" type="number" name="stock" id="edit-stock" min="0" required>
                     
                     <label>Expiry Date:</label>
-                    <input type="date" name="expiry_date" id="edit-expiry">
+                    <input class="input-generic" type="date" name="expiry_date" id="edit-expiry">
 
                     <button type="submit">Update Item</button>
                 </form>
