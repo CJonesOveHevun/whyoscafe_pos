@@ -46,6 +46,9 @@ button {
   cursor: pointer;
   font-weight: bold;
 }
+button:hover{
+  background-color: rgb(255, 175, 56);
+}
 
 /* Create item dialog styles */
 .dialog {
@@ -84,6 +87,26 @@ button {
 .item-content form label, .item-content form input, .item-content form div input, .item-content form div label{
     flex-grow: 1.0;
     gap: 4px;
+}
+.items-actions{
+  display: flex;
+  flex-direction: row;
+}
+.items-actions button{
+  background-color:white;
+  color: #ffffff;
+  margin: 4px;
+  gap: 4px;
+}
+.items-actions button:hover{
+  background-color: #ffffff;
+}
+
+.items-actions .edit_btn:hover{
+  background-color: rgb(255, 186, 83);
+}
+.items-actions .remove_btn:hover{
+  background-color: rgb(255, 111, 92);
 }
 
 .close {
