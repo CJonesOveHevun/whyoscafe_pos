@@ -29,8 +29,11 @@
         </div>
 
         <div class="main-content">
-            <h1>Inventory Management</h1>
-            <button onclick="openDialog()">+ Add Item</button>
+            <div class="main-topbar">
+                <h1>Inventory Management</h1>
+                <button onclick="openDialog()">+ Add Item</button>
+            </div>
+            
 
             <table>
             <thead>
@@ -55,7 +58,7 @@
                     <td>
                         <?php
                         $stock = (int)$item['stock'];
-                        echo $stock > 10 ? "In Stock" : ($stock > 0 ? "Low Stock" : "Out of Stock");
+                        echo $stock > 10 ? "<p class=\"instock\">In Stock</p>" : ($stock > 0 ? "<p class=\"lowstock\">Low Stock</p>" : "<p class=outofstock\">Out of Stock</p>");
                         ?>
                     </td>
                     

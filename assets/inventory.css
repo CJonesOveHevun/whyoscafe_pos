@@ -12,6 +12,11 @@ body {
     box-shadow: 0px 4px 8px 2px rgb(230, 230, 230) ;
 }
 
+.main-topbar{
+  display: flex;
+  justify-content: space-between;
+}
+
 table {
     width: 100%;
     margin-top: 20px;
@@ -81,4 +86,26 @@ button {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.instock{
+  background-color: rgb(230, 255, 237);
+  color: rgb(38, 179, 80);
+}
+.lowstock{
+  background-color: rgb(255, 244, 229);
+  color: rgb(192, 95, 39);
+}
+.outofstock{
+  background-color: rgb(255, 228, 228);
+  color: rgb(168, 27, 27);
+  
+}
+
+.instock, .lowstock, .outofstock{
+  align-content: center;
+  text-align: center;
+  border-radius: 32px;
+  width: 50%;
+  padding: 8px;
 }
