@@ -6,7 +6,8 @@ This is an sample of an inventory system developed by
 Deployed web-link:
 https://whyoscafepos-production.up.railway.app/
 
-Database used: <a href="https://www.mongodb.com" >MongoDB</a> via Atlas
+Deployment:<a href="https://railway.com/">Railway.com</a>
+Database: <a href="https://www.mongodb.com" >MongoDB</a> via Atlas
 
 # 5 Pages created
 ## 1. dashbaord
