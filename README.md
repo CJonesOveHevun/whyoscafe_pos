@@ -1,7 +1,8 @@
 # whyoscafe_pos
 Mock PoS website for school project.
-This is an sample of an inventory system developed by
-3 members in this group
+This is a simple inventory system developed by
+3 members in this group. Built mainly using PHP and MongoDB.
+It allows users to add items and view dashboards dsiplaying inventory records.
 
 Deployed web-link:
 https://whyoscafepos-production.up.railway.app/
