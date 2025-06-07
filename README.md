@@ -48,7 +48,9 @@ https://whyoscafepos-production.up.railway.app/
 # Pages Created
 ## 1. dashbaord
 It displays numeric datas from the inventory,
-![image](https://github.com/user-attachments/assets/c5c56112-8277-4834-8acc-76bc1d42ee25)
+![image](https://github.com/user-attachments/assets/1da4913b-ac45-4ffc-b63d-9e9f8350aea7)
+
+
 consists of: 
 - total number of items
 - total number of low-stock items
@@ -63,13 +65,17 @@ Charts:
 
 ## 2. Inventory Management
 This page uses MongoDB for storing item data and performs simple CRUD operations
-![image](https://github.com/user-attachments/assets/c003762a-2f56-4612-8366-148756abddfc)
+![image](https://github.com/user-attachments/assets/2f2bfa76-f12d-4536-a3db-6585265507cd)
+
 
 
 ## 3. Ingredients Calculator
 This page is dedicated for calculating bulk orders and displays the total price in a few clicks. This also provide unit converters for measurements
-![image](https://github.com/user-attachments/assets/7e6848c6-b826-4944-b543-50451c2fe773)
+![image](https://github.com/user-attachments/assets/84e25c63-a457-4e21-9985-3074477b4caf)
+
 
 
 ## 4. Local Events
 Summarizes Upcoming local events that may affect the shops demands
+![image](https://github.com/user-attachments/assets/0df79966-e517-4729-ae26-2c62d67cb2a0)
+
