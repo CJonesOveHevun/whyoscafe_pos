@@ -80,28 +80,30 @@
             <section class="card converter">
                 <h2>Unit Converter</h2>
                 <label>From</label>
-                <input type="number" placeholder="Amount" />
-                <select>
-                    <option>grams (g)</option>
-                    <option>liters (L)</option>
+                <input type="number" placeholder="Amount" id="inp_convert"/>
+                <select id="fromUnit">
+                    <option value="grams">grams (g)</option>
+                    <option value="kilograms">kilograms (kg)</option>
+                    <option value="milliliters">milliliters (ml)</option>
+                    <option value="liters">liters (L)</option>
                 </select>
 
                 <label>To</label>
-                <select>
-                    <option>kilograms (kg)</option>
-                    <option>milliliters (ml)</option>
+                <select id="ToUnit">
+                    <option value="grams">grams (g)</option>
+                    <option value="kilograms">kilograms (kg)</option>
+                    <option value="milliliters">milliliters (ml)</option>
+                    <option value="liters">liters (L)</option>
+                    <option value="tablespoons">tablespoons (tbs)</option>
                 </select>
 
-                <div class="conversions">
-                    <p>1 kg = 1,000 g</p>
-                    <p>1 L = 1,000 ml</p>
-                    <p>1 cup ≈ 240 ml</p>
-                    <p>1 tbsp ≈ 15 ml</p>
-                    <p>1 tsp ≈ 5 ml</p>
-                </div>
+                <p class="conversions" id="unitResults"></p>
+                
             </section>
         </div>
+        
     </main>
 </div>
+<script src="../pages/converter.js"></script>
 </body>
 </html>

@@ -25,14 +25,19 @@
             <?php date_default_timezone_set('Asia/Manila'); ?>
             
             <div class="events-container">
-                <h2>Local Events</h2>
-                <label for="events"></label>
-                <select id="events">
-                    <option value="all">All...</option>
-                    <option value="month">This Month</option>
-                    <option value="year">This Year</option>
-                </select>
-                <button type="button">+ Add event</button>
+                <div class="event-actions">
+                    <h2>Local Events</h2>
+                    <div>
+                        <label for="events"></label>
+                        <select id="events">
+                            <option value="all">All...</option>
+                            <option value="month">This Month</option>
+                            <option value="year">This Year</option>
+                        </select>
+                        <button type="button">+ Add event</button>
+                    </div>
+                </div>
+                
             </div>
             <div class="events-container">
                 <div class="event-card">
