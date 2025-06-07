@@ -23,8 +23,7 @@
                 <div class="datetime">
                     <span class="date"><?php echo date('F j, Y'); ?></span>
                     <span class="time"><?php echo date('h:i A'); ?></span>
-                </div>
-                    
+                </div> 
             </div>
             
         </div>

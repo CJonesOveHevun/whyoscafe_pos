@@ -63,12 +63,14 @@
                         ?>
                     </td>
                     
-                    <td>
-                        <button onclick="openEditDialog('<?= $item['_id'] ?>', '<?= htmlspecialchars($item['name'], ENT_QUOTES) ?>', '<?= $item['category'] ?>', <?= (int)$item['stock'] ?>, '<?= $item['expiry_date'] ?>')">Edit</button>
+                    <td class="items-actions">
+                        <button class="edit_btn" onclick="openEditDialog('<?= $item['_id'] ?>', '<?= htmlspecialchars($item['name'], ENT_QUOTES) ?>', '<?= $item['category'] ?>', <?= (int)$item['stock'] ?>, '<?= $item['expiry_date'] ?>')">
+                            <img src="../assets/edit.png" alt="delete" width="16px" height="16px">
+                        </button>
 
                         <form method="POST" action="delete_item.php" onsubmit="return confirm('Are you sure you want to remove this item?')">
                         <input type="hidden" name="id" value="<?=$item["_id"]?>">
-                        <button type="submit">Delete</button>
+                        <button class="remove_btn" type="submit"><img src="../assets/trash.png" alt="delete" width="16px" height="16px"></button>
                         </form>
                     </td>
                 </tr>
