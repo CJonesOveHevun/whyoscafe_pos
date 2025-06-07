@@ -8,6 +8,7 @@
     $events = $eventCollections->find();
     ?>
     <main>
+        <?php date_default_timezone_set('Asia/Manila'); ?>
         <div class="topbar">
                 <div>
                     <h2>Local Events - Philippines</h2>
