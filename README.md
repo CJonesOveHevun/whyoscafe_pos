@@ -3,6 +3,9 @@ Mock PoS website for school project.
 This is an sample of an inventory system developed by
 3 members in this group
 
+Deployed web-link:
+
+
 Database used: MongoDB via Atlas
 
 # 5 Pages created
