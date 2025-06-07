@@ -5,7 +5,7 @@
     <?php
     require_once '../backend/db_connect.php';
     $collections = $client->selectCollection($dbname,'inventory');
-    $items = $collections->find();
+    $items = $collections->find([],['limit'=>10]);
     ?>
     <main>
         <div class="topbar">

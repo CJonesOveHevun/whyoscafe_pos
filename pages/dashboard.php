@@ -8,7 +8,9 @@
     <?php
     require_once '../backend/db_connect.php';
     $collections = $client->selectCollection($dbname,'inventory');
+    $eventCollections = $client->selectCollection($dbname,'events');
     $items = $collections->find();
+    $events = $eventCollections->find([],['sort' => ['date' => -1], 'limit'=>3]);
 
     $lowstockThreshold = 10;
     $instocks = 0;
@@ -117,11 +119,12 @@
             <!-- Recent Activities and Alerts -->
             <div class="bottom-section">
                 <div class="recent-activities">
-                    <h3>Recent Activities</h3>
+                    <h3>Upcoming Events</h3>
                     <ul class="activity-list">
-                        <li>Added 20 bottles of Vanilla Syrup to inventory</li>
-                        <li>Removed 5 expired Milk packs</li>
-                        <li>Updated stock value for Chocolate Powder</li>
+                        <?php foreach($events as $event): ?>
+                        <li><?php echo htmlspecialchars($event['name']) . ' - ' . htmlspecialchars($event['date']); ?></li>
+                        <?php endforeach; ?>
+
                     </ul>
                 </div>
 

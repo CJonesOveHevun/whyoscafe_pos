@@ -434,14 +434,23 @@ ul.card li {
     background-color: rgba(0, 0, 0, 0.05);
 }
 .modal-content{
+    display: flex;
+    flex-direction: column;
     background-color: white;
     margin: 5% auto;
     padding: 20px;
-    width: 400px;
+    width: 490px;
     border-radius: 8px;
     position: relative;
 }
-.close{
+.modal-content form{
+    flex-direction: column;
+}
+.modal-content form input{
+    flex-grow: 100%;
+    width: 100%;
+}
+.close_dialog{
     position: absolute;
     right: 16px;
     top: 12px;
@@ -467,4 +476,10 @@ ul.card li {
     padding: 8px 16px;
     border: none;
     cursor: pointer;
+}
+
+.event-desc{
+    width: 100%;
+    height: 200px;
+    resize: none;
 }
