@@ -1,5 +1,5 @@
 # Whyos Cafe Inventory 
-Mock PoS website for school project.
+Mock web-based Inventory system for school project.
 This is a simple inventory system developed by
 3 members in this group. Built mainly using PHP and MongoDB.
 It allows users to add items and view dashboards dsiplaying inventory records.
