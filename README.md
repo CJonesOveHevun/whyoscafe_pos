@@ -58,7 +58,7 @@ consists of:
 - Total value from the inventory
 
 Charts:
-- <b>[Not working]</b> Demand Forecasts
+- Demand Forecasts
 - Inventory Levels
 
 
