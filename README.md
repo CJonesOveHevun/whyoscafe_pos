@@ -46,7 +46,7 @@ https://whyoscafepos-production.up.railway.app/
 
 
 # Pages Created
-## 1. dashbaord
+## 1. dashboard
 It displays numeric datas from the inventory,
 ![image](https://github.com/user-attachments/assets/1da4913b-ac45-4ffc-b63d-9e9f8350aea7)
 
