@@ -51,7 +51,7 @@ It displays numeric datas from the inventory,
 ![image](https://github.com/user-attachments/assets/1da4913b-ac45-4ffc-b63d-9e9f8350aea7)
 
 
-consists of: 
+includes: 
 - total number of items
 - total number of low-stock items
 - Items Expiring soon
