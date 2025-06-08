@@ -40,10 +40,50 @@ https://whyoscafepos-production.up.railway.app/
     GitHub
     </th>
   </tr>
+  <tr>
+    <th>
+    Backend: 
+    </th>
+    <th>
+    PHP
+    </th>
+  </tr>
+  <tr>
+    <th>
+    IDE: 
+    </th>
+    <th>
+    Visual Studio Code
+    </th>
+  </tr>
 </table>
- 
 
+# Prerequisites
+The requirements for developing this project includes:
+- **PHP 8.2**
+- **XAMPP**, for local development
+- **Composer**
+- **MongoDB Atlas**
+- **PHP Driver**
+   - ('mongodb/mongodb')
+   - installed via Composer
+- **Dockerfile**, since native PHP in Railway does not include MongoDB Atlas support, a custom Dockerfile was created.
 
+# Development Process
+## 1. Local development with Visual Studio Code and XAMPP
+Project files are created and edited through VS Code and used XAMPP to run local Apache server and PHP environment and files were put in 'htdocs' folder. Git is used to version control the project and to remote Github Repository.
+
+## 2. MongoDB Integration
+We used MongoDB Atlas as the cloud-based database provider and installed MongoDB PHP Driver using Composer in the terminal:
+```
+composer require mongodb/mongodb
+```
+
+## 3. Testing on Localhost
+Testing was performed via browser through local XAMPP Server. We verified the connections in MongoDB Atlas and the operations such as add/edit/delete.
+
+## 4. Deployment
+A `Dockerfile` is included in the root of the project so Railway detects it and use it to build and deploy the app. The environment variables are set directly inside the Railway project dashboard.
 
 # Pages Created
 ## 1. dashboard
