@@ -483,3 +483,24 @@ ul.card li {
     height: 200px;
     resize: none;
 }
+
+#notif-dialog{
+    box-shadow: #dadada 0px 2px 8px 4px;
+    font-size: small;
+    border-radius: 8px;
+    top: 64px;
+    right: 64px;
+    width: 326px;
+    padding: 16px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+}
+
+#bell_btn{
+    padding: 0px !important;
+    background-color: none;
+    background: none;
+    border: none;
+}

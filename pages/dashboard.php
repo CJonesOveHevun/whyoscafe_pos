@@ -12,6 +12,7 @@
     $items = $collections->find();
     $events = $eventCollections->find([],['sort' => ['date' => -1], 'limit'=>3]);
 
+    $notifCount = 0;
     $lowstockThreshold = 10;
     $instocks = 0;
     $lowstocks = 0;
@@ -50,9 +51,11 @@
         if ($stock > $lowstockThreshold) {
             $instocks++;
         } elseif ($stock > 0 && $stock <= $lowstockThreshold) {
+            $notifCount++;
             $lowstocks++;
             $itemsLowStock[] = $item;
         } else {
+            $notifCount++;
             $outofstocks++;
             $itemsOutofStock[] = $item;
         }
@@ -69,9 +72,29 @@
             
                 <div class="notif">
                     <div class="notifications">
-                        <span class="bell">🔔</span>
-                        <span class="badge">3</span>
-                    </div>
+                    <button class="bell" id="bell_btn">🔔</button>
+                    <span class="badge"><?php
+                        if ($notifCount > 0){
+                            echo htmlspecialchars($notifCount);
+                        } else {
+                            echo '';
+                        }
+                     ?></span>
+                </div>
+                <div id="notif-dialog">
+                    <ul>
+                        <?php foreach($itemsLowStock as $lowitems){
+                                echo '<p><strong>' . htmlspecialchars($lowitems['name']) .'</strong> is low in stock</p>';
+                                echo '<span class=\"alert-detail\">-- Only ' . htmlspecialchars($lowitems['stock']) . ' '. htmlspecialchars($lowitems['unit']) . ' remaining';
+
+                            }
+                            foreach($itemsOutofStock as $noitems){
+                                echo "<p><strong>" . htmlspecialchars($noitems['name']) . "</strong> is out of stock</p>";
+                                echo "<span class='alert-detail'>-- Restock immediately!</span>";
+                            }    
+                        ?>
+                    </ul>
+                </div>
                     <div class="datetime">
                         <span class="date"><?php echo date('F j, Y'); ?></span>
                         <span class="time"><?php echo date('h:i A'); ?></span>
@@ -155,5 +178,19 @@
     }
 </script>
 <script src="../pages/dashboard.js"></script>
+<script>
+    let notif_btn = document.getElementById("bell_btn");
+    let dialog = document.getElementById('notif-dialog');
+    
+    function toggleVisibility(){
+        console.log('clicked');
+        if (dialog.style.display == 'flex'){
+            dialog.style.display = 'none';
+        } else {
+            dialog.style.display = 'flex'
+        }
+    }
+    notif_btn.addEventListener('click', toggleVisibility);
+</script>
 </body>
 </html>

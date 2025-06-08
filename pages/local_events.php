@@ -5,7 +5,21 @@
     <?php
     require_once '../backend/db_connect.php';
     $eventCollections = $client->selectCollection($dbname, 'events');
+    $collections = $client->selectCollection($dbname, 'inventory');
+    $items = $collections->find();
     $events = $eventCollections->find();
+    $lowstockItems = [];
+    $nostockItems = [];
+    $notifCount = 0;
+    foreach ($items as $item){
+        if ($item['stock'] > 0 && $item['stock'] < 10) {
+            $lowstockItems[] = $item;
+            $notifCount++;
+        } elseif  ($item['stock'] == 0) {
+            $nostockItems[] = $item;
+            $notifCount++;
+        }
+    }
     ?>
     <main>
         <?php date_default_timezone_set('Asia/Manila'); ?>
@@ -17,8 +31,28 @@
                 
                 <div class="notif">
                     <div class="notifications">
-                        <span class="bell">🔔</span>
-                        <span class="badge">3</span>
+                        <button class="bell" id="bell_btn">🔔</button>
+                        <span class="badge"><?php
+                            if ($notifCount > 0){
+                                echo htmlspecialchars($notifCount);
+                            } else {
+                                echo '';
+                            }
+                        ?></span>
+                    </div>
+                    <div id="notif-dialog">
+                        <ul>
+                            <?php foreach($lowstockItems as $lowitems){
+                                    echo '<p><strong>' . htmlspecialchars($lowitems['name']) .'</strong> is low in stock</p>';
+                                    echo '<span class=\"alert-detail\">-- Only ' . htmlspecialchars($lowitems['stock']) . ' '. htmlspecialchars($lowitems['unit']) . ' remaining';
+
+                                }
+                                foreach($nostockItems as $noitems){
+                                    echo "<p><strong>" . htmlspecialchars($noitems['name']) . "</strong> is out of stock</p>";
+                                    echo "<span class='alert-detail'>-- Restock immediately!</span>";
+                                }    
+                            ?>
+                        </ul>
                     </div>
                     <div class="datetime">
                         <span class="date"><?php echo date('F j, Y'); ?></span>
@@ -92,6 +126,20 @@
         document.getElementById("event-dialog").style.display = "none";
     }
     document.getElementById("add_event_btn").addEventListener("click", openDialog);
+</script>
+<script>
+    let notif_btn = document.getElementById("bell_btn");
+    let dialog = document.getElementById('notif-dialog');
+    
+    function toggleVisibility(){
+        console.log('clicked');
+        if (dialog.style.display == 'flex'){
+            dialog.style.display = 'none';
+        } else {
+            dialog.style.display = 'flex'
+        }
+    }
+    notif_btn.addEventListener('click', toggleVisibility);
 </script>
 </body>
 </html>
