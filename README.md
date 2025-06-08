@@ -79,3 +79,8 @@ This page is dedicated for calculating bulk orders and displays the total price 
 Summarizes Upcoming local events that may affect the shops demands
 ![image](https://github.com/user-attachments/assets/0df79966-e517-4729-ae26-2c62d67cb2a0)
 
+# Contributors
+Members of the group in this project:
+- Milkel1 - Ferrer, Michael
+- CjonesOveHevun - Mojica, Jerome
+- [no Github] - Lastimosa, Samantha Nicole 
