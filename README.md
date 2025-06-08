@@ -1,4 +1,4 @@
-# Whyos Cafe Inventory 
+# Whyos Cafe Inventory ☕
 Mock web-based Inventory system for school project.
 This is a simple inventory system developed by
 3 members in this group. Built mainly using PHP and MongoDB.
